@@ -11,20 +11,20 @@ function doPolling(lastModified) {
 
       if (
         data.server_time > lastModified &&
-        data.applications &&
-        data.applications.length > 0
+        data.posts &&
+        data.posts.length > 0
       ) {
         content.innerHTML = '';
 
-        data.applications.forEach(application => {
+        data.posts.forEach(post => {
           const applicationHTML = `
             <div class="col-md-4">
               <div class="card">
-                <img src="${application.image}" class="card-img-top" alt="${application.title}">
+                <img src="${post.image}" class="card-img-top" alt="${post.title}">
                 <div class="card-body">
-                  <h5 class="card-title">${application.title}</h5>
-                  <p class="card-text">${application.body}</p>
-                  <p class="card-text">Slug: ${application.slug}</p>
+                  <h5 class="card-title">${post.title}</h5>
+                  <p class="card-text">${post.body}</p>
+                  <p class="card-text">Slug: ${post.slug}</p>
                 </div>
               </div>
             </div>
